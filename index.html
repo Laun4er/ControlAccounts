@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление аккаунтами</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Управление аккаунтами</h1>
+            <div class="subtitle">Превью модель демонстрации работы аккаунтов PPLab для PPLauncher & PPLab_Dev. Для демонстрации можно создавать пока что 2 аккаунта, однако в бэкенде можно добавить Unlimited для бесконечных твинков. НЕ РЕКОМЕНДУЕТСЯ ПЕРЕГРУЖАТЬ ЛОКАЛЬНУЮ БАЗУ ДАННЫХ!!</div>
+        </header>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Ник</th>
+                        <th style="width: 20%;">Статус</th>
+                        <th style="width: 20%;">Дата создания</th>
+                        <th style="width: 20%;">Тип</th>
+                        <th style="width: 20%;">Действия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="empty-account">
+                            <div class="account-name">Нет аккаунта</div>
+                        </td>
+                        <td>
+                            
+                        </td>
+                        <td></td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            <div class="actions">
+                                <button class="action-btn add" title="Добавить аккаунт" onclick="addAccount()">
+                                    <span>➕</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="empty-account">
+                        <td>
+                            <div class="account-name">Нет аккаунта</div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div class="actions">
+                                <button class="action-btn add" title="Добавить аккаунт" onclick="addAccount()">
+                                    <span>➕</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <footer>
+            <p>Made by Laun4er. PPLab&DruDruVPN. Proj AccountsPreview</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
