@@ -25,40 +25,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="empty-account">
-                            <div class="account-name">Нет аккаунта</div>
-                        </td>
-                        <td>
-                            
-                        </td>
-                        <td></td>
-                        <td>
-                            
-                        </td>
-                        <td>
-                            <div class="actions">
-                                <button class="action-btn add" title="Добавить аккаунт" onclick="addAccount()">
-                                    <span>➕</span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="empty-account">
-                        <td>
-                            <div class="account-name">Нет аккаунта</div>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <div class="actions">
-                                <button class="action-btn add" title="Добавить аккаунт" onclick="addAccount()">
-                                    <span>➕</span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
+                    <!-- Здесь будут динамически добавляться строки через JavaScript -->
                 </tbody>
             </table>
         </div>
@@ -67,6 +34,64 @@
             <p>Made by Laun4er. PPLab&DruDruVPN. Proj AccountsPreview</p>
         </footer>
     </div>
+
+    <!-- Модальное окно для добавления/редактирования аккаунта -->
+    <div id="account-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Добавить аккаунт</h3>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="account-form">
+                    <div class="form-group">
+                        <label for="account-name">Никнейм</label>
+                        <input type="text" id="account-name" placeholder="Введите никнейм" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="account-status">Статус</label>
+                        <select id="account-status">
+                            <option value="check">✅ Активный</option>
+                            <option value="inactive">❌ Неактивный</option>
+                            <option value="pending">⏳ Ожидание</option>
+                            <option value="error">⚠️ Ошибка</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="account-type-input">Тип аккаунта</label>
+                        <div class="type-input-container">
+                            <input type="text" id="account-type-input" placeholder="Выберите или введите тип" autocomplete="off">
+                            <div id="type-suggestions" class="type-suggestions"></div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="account-id">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancel-modal">Отмена</button>
+                <button class="btn btn-primary" id="save-account">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно подтверждения удаления -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Подтверждение удаления</h3>
+                <button class="close-modal" id="close-confirm">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Вы уверены, что хотите удалить аккаунт <strong id="account-to-delete"></strong>?</p>
+                <p style="color: #aaa; font-size: 14px; margin-top: 10px;">Это действие нельзя отменить.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancel-delete">Отмена</button>
+                <button class="btn btn-danger" id="confirm-delete">Удалить</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
